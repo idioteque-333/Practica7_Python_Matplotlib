@@ -17,12 +17,12 @@ def ejemplo_onda_senoidal():
 
 	def actualizar(frame):
 		linea.set_ydata(np.sin(x + frame / 10.0))
-		return linea,
 		ani = FuncAnimation(fig, actualizar, frames=60, interval=50, blit=True)
 		ani.save("1_onda_senoidal.gif", writer=PillowWriter(fps=20))
 		print("¡Archivo '1_onda_senoidal.gif' guardado! Cierra la ventana para volver al menú.")
 		plt.show()
-
+		return linea,
+		
 	def ejemplo_espiral():
 		print("\nGenerando '2_espiral.gif'...")
 		fig, ax = plt.subplots()
@@ -31,7 +31,6 @@ def ejemplo_onda_senoidal():
 		ax.set_aspect('equal')
 		ax.set_title("2. Espiral de Arquímedes")
 		linea, = ax.plot([], [], color='crimson', lw=2)
-
 		t_max = np.linspace(0, 10 * np.pi, 300)
 
 	def actualizar(frame):
